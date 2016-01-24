@@ -2,9 +2,39 @@
 {% if settings.home_page_content != blank %}
   <hr class="hr--clear">
 
-  <div class="featured-page-content">
+  <div>
     <div class="rte text-center">
-      {{ pages[settings.home_page_content].content }}
+      <div class="how-it-works">
+        <h2>How it Works</h2>
+        <div class="how-it-works-component"><img src="http://paintandpattern.com/wp-content/uploads/2014/07/royal-design-studio-designs-manufactures-wall-stencils.jpg" />
+          <h3>Be the first</h3>
+          <p>Our designers put their ready-to-be-produced designs on our website.</p>
+        </div>
+        <div class="how-it-works-component"><img src="http://paintandpattern.com/wp-content/uploads/2014/07/royal-design-studio-designs-manufactures-wall-stencils.jpg" />
+          <h3>No middle man</h3>
+          <p>Designs have a limited amount of time to reach the campaign’s sales goal.</p>
+        </div>
+        <div class="how-it-works-component"><img src="http://paintandpattern.com/wp-content/uploads/2014/07/royal-design-studio-designs-manufactures-wall-stencils.jpg" />
+          <h3>Crowd fund</h3>
+          <p>If the campaign is successful, the designer goes ahead with production and we deliver the order to your door.</p>
+        </div>
+      </div>
+  </div>
+    <div class="rte text-center">
+      <div class="designer-homepage-box left">
+        <div class="designer-homepage-image one"></div>
+        <h4>Collection</h4>
+        <h2>DESIGNER NAME</h2>
+        <p>Super-beautiful designs, inspired by ecology and the world around them.</p>
+        <button class="btn">SHOP NOW</button>
+      </div>
+      <div class="designer-homepage-box right">
+        <div class="designer-homepage-image two"></div>
+        <h4>Collection</h4>
+        <h2>DESIGNER NAME</h2>
+        <p>Super-beautiful designs, inspired by ecology and the world around them.</p>
+        <button class="btn">SHOP NOW</button>
+      </div>
     </div>
   </div>
 {% endif %}
