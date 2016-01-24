@@ -80,7 +80,7 @@ $color-footer: #f9f9f9;
 $color-btn-primary: #1a1a1a;
 $color-btn-primary-hover: darken($color-btn-primary, 10%);
 $color-btn-primary-active: darken($color-btn-primary-hover, 10%);
-$color-btn-primary-text: #fff;
+$color-btn-primary-text: #ffffff;
 
 // Text link colors
 $color-link: #1a1a1a;
@@ -140,7 +140,7 @@ $gutter-heading: 30px;
 
 
 
-$font-stack-header: "Karla", "HelveticaNeue", "Helvetica Neue", sans-serif;
+$font-stack-header: "Montserrat", "HelveticaNeue", "Helvetica Neue", sans-serif;
 $font-weight-header: 700;
 $font-size-header: 25px;
 
@@ -150,16 +150,16 @@ $font-size-button-mobile: $font-size-button - 1px;
 $font-weight-normal: 400;
 $font-weight-bold: 700;
 
-$font-stack-body: "Open Sans", "HelveticaNeue", "Helvetica Neue", sans-serif;
+$font-stack-body: "Lato", "HelveticaNeue", "Helvetica Neue", sans-serif;
 $font-size-base: 15px; // Henseforth known as 1em
 
 @font-face {
   font-family: 'icons';
-  src: url('//cdn.shopify.com/s/files/1/1138/1482/t/2/assets/icons.eot?15562396153595749856');
-  src: url('//cdn.shopify.com/s/files/1/1138/1482/t/2/assets/icons.eot?15562396153595749856#iefix') format("embedded-opentype"),
-       url('//cdn.shopify.com/s/files/1/1138/1482/t/2/assets/icons.woff?15562396153595749856') format("woff"),
-       url('//cdn.shopify.com/s/files/1/1138/1482/t/2/assets/icons.ttf?15562396153595749856') format("truetype"),
-       url('//cdn.shopify.com/s/files/1/1138/1482/t/2/assets/icons.svg?15562396153595749856#shop-icons') format("svg");
+  src: url('//cdn.shopify.com/s/files/1/1138/1482/t/2/assets/icons.eot?15809825638778087511');
+  src: url('//cdn.shopify.com/s/files/1/1138/1482/t/2/assets/icons.eot?15809825638778087511#iefix') format("embedded-opentype"),
+       url('//cdn.shopify.com/s/files/1/1138/1482/t/2/assets/icons.woff?15809825638778087511') format("woff"),
+       url('//cdn.shopify.com/s/files/1/1138/1482/t/2/assets/icons.ttf?15809825638778087511') format("truetype"),
+       url('//cdn.shopify.com/s/files/1/1138/1482/t/2/assets/icons.svg?15809825638778087511#shop-icons') format("svg");
   font-weight: $font-weight-normal;
   font-style: normal;
 }
@@ -179,7 +179,7 @@ $z-index-hero-logo: 5;
 
 /*================ Misc ================*/
 $radius: 2px;
-$svg-action-bar: '//cdn.shopify.com/s/files/1/1138/1482/t/2/assets/action-bar.svg.liquid?15562396153595749856';
+$svg-action-bar: '//cdn.shopify.com/s/files/1/1138/1482/t/2/assets/action-bar.svg.liquid?15809825638778087511';
 
 /*================ #Site Header ================*/
 $height-site-header: 65px;
@@ -1217,7 +1217,7 @@ select {
   @include prefix(appearance, none, webkit moz spec);
   background-position: right center;
   background: {
-    image: url('//cdn.shopify.com/s/files/1/1138/1482/t/2/assets/ico-select.svg?15562396153595749856');
+    image: url('//cdn.shopify.com/s/files/1/1138/1482/t/2/assets/ico-select.svg?15809825638778087511');
     repeat: no-repeat;
     position: right 10px center;
     color: transparent;
@@ -1352,11 +1352,13 @@ label[for] {
   font-family: $font-stack-header;
   font-weight: $font-weight-header;
   text-rendering: optimizeLegibility;
-  
 
-  
+    text-transform: uppercase;
+
+
+
     letter-spacing: 0.05em;
-  
+
 }
 
 @mixin placeholder-text($color, $opacity) {
@@ -2313,10 +2315,19 @@ textarea {
 .hero__logo-text {
   color: $color-hero-text;
   font-size: em(20px);
+  padding: 0 100px;
 
   @include media-query($medium-up) {
     font-size: em(26px);
   }
+
+  @media only screen and (max-width: 600px) {
+    padding: 0;
+  }
+}
+
+.hero__button {
+  border: 1px solid white;
 }
 
 .hero__logo-image {
@@ -2440,7 +2451,7 @@ $slick-opacity-not-active: 0.25;
 
 // Only called once so make sure proper file is grabbed
 @function slick-image-url($url) {
-  @return url(//cdn.shopify.com/s/files/1/1138/1482/t/2/assets/ajax-loader.gif?15562396153595749856);
+  @return url(//cdn.shopify.com/s/files/1/1138/1482/t/2/assets/ajax-loader.gif?15809825638778087511);
 }
 
 // Unused intentionally
@@ -4367,4 +4378,3 @@ $slick-opacity-not-active: 0.25;
     font-size: em(20);
   }
 }
-

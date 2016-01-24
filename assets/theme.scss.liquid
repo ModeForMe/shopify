@@ -2333,10 +2333,19 @@ textarea {
 .hero__logo-text {
   color: $color-hero-text;
   font-size: em(20px);
+  padding: 0 100px;
 
   @include media-query($medium-up) {
     font-size: em(26px);
   }
+
+  @media only screen and (max-width: 600px) {
+    padding: 0;
+  }
+}
+
+.hero__button {
+  border: 1px solid white;
 }
 
 .hero__logo-image {
@@ -4387,4 +4396,3 @@ $slick-opacity-not-active: 0.25;
     font-size: em(20);
   }
 }
-

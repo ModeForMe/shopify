@@ -30,7 +30,8 @@
                 {% if settings.logo_use_image %}
                   <img class="hero__logo-image" src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
                 {% else %}
-                  <h1 class="hero__logo-text" itemprop="url">{{ shop.name }}</h1>
+                  <h1 class="hero__logo-text" itemprop="url">Bring back originality. Shop the next big designers before they launch.</h1>
+                  <button class="btn hero__button">BROWSE COLLECTIONS</button>
                 {% endif %}
               {% when 'custom' %}
                 <img class="hero__logo-image" src="{{ 'hero-logo.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
@@ -55,7 +56,7 @@
     {% endfor %}
   </div>
   <div class="hero__header">
-    <div class="action-area">
+    <div style="display: none;" class="action-area">
       {% include 'action-bar' %}
     </div>
   </div>
