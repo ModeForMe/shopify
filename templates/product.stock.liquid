@@ -93,9 +93,6 @@
       <div class="grid grid--no-gutters product__details-content">
         <div class="grid__item large-up--two-twelfths large-up--push-two-twelfths medium-up--three-twelfths medium-up--push-one-twelfth">
           <h2 itemprop="name">{{ product.title }}</h2>
-
-          {{ product.available | json }}
-
           <form action="/cart/add" method="post" id="AddToCartForm" enctype="multipart/form-data" class="product__form">
 
             {% comment %}
@@ -155,6 +152,7 @@
           <div class="product-single__errors"></div>
           <div class="product-single__description rte" itemprop="description">
             {{ product.description }}
+            {{ product.variants[0].inventory_quantity | json }} of {{ product.variants[0].sku | json }}
           </div>
           {% if settings.social_sharing_products %}
             {% include 'social-sharing' %}

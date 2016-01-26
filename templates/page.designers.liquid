@@ -1,0 +1,24 @@
+<div>
+  <header class="rte">
+    <h1>Our Designers</h1>
+  </header>
+  <div class="rte rte--indented-images">
+    {{ page.content }}
+    <div class="designers">
+      {% for collection in collections %}
+
+        {% if collection.template_suffix == "designer" %}
+
+          <div class="designer-feature">
+            <h3>{{ collection.title | json }}</h3>
+            {% if collection.image %}
+              {{ collection.image | img_url: 'medium' }}
+            {% endif %}
+          </div>
+
+        {% endif %}
+
+      {% endfor %}
+    </div>
+  </div>
+</div>

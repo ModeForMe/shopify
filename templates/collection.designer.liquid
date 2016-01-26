@@ -10,6 +10,15 @@
 
 {% if collection.description != blank %}
   <div class="rte rte--description">
+    <h1>{{ collection.title }}</h1>
+    <div class="rte text-center">
+      <div class="designer-homepage-box left">
+        <div class="designer-homepage-image one"></div>
+      </div>
+      <div class="designer-homepage-box right">
+        <div class="designer-homepage-image two"></div>
+      </div>
+    </div>
     {{ collection.description }}
   </div>
 {% endif %}
