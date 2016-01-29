@@ -2420,12 +2420,12 @@ textarea {
 }
 
 /*================ Hero header ================*/
-.hero__header {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
+// .hero__header {
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+// }
 
 .hero__site-header {
   position: absolute;
@@ -4054,14 +4054,14 @@ $slick-opacity-not-active: 0.25;
 }
 
 .selector-wrapper {
-  max-width: 100%;
-  margin-bottom: 10px;
+  margin: 20px 0 0 0;
   border: 1px solid $color-border;
   border-radius: 2px;
   padding: 6px 3px 6px 12px;
-  display: inline-block;
-  float: left;
+  display: block;
+  float: none;
   clear: left;
+  width: 170px;
 
   label {
     color: $color-headings-text;
@@ -4445,7 +4445,7 @@ $slick-opacity-not-active: 0.25;
 }
 
 .one {
-  background-image: url("https://cdn.stilnest.com/media/productcollection/image/cache/1900x/10a946f8d6950656339a5a2481b95cb6/s/t/stilnest_luisa_6_rz_1_.jpg");
+  background-image: url("http://cdn.shopify.com/s/files/1/1138/1482/collections/unspecified-6_grande_6b62231f-9efd-4f2a-8a8a-0c4fd1549f7e_large.jpg?v=1454022113");
 }
 
 .two {
@@ -4455,6 +4455,16 @@ $slick-opacity-not-active: 0.25;
 .featured-products {
   margin-top: 20px;
   text-align: center;
+}
+
+.product-item__meta__inner .progress {
+  font-family: "Montserrat","HelveticaNeue","Helvetica Neue",sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #1a1a1a;
+  margin-top: 15px;
+  font-size: 16px;
 }
 
 /* contact form */
@@ -4531,7 +4541,7 @@ $slick-opacity-not-active: 0.25;
 }
 
 .product-single__description.rte {
-    margin: 30px 0;
+    margin: 20px 0;
 }
 
 @include media-query($small) {
@@ -4548,3 +4558,25 @@ $slick-opacity-not-active: 0.25;
   padding-top: 40px;
 }
 
+/* Our designers page */
+
+.designers {
+  margin-top: 50px;
+}
+
+.designer-feature {
+  text-align: center;
+  margin-bottom: 60px;
+  width: 100%;
+}
+
+.designer-feature img {
+  height: 370px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.designer-feature h2 {
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
