@@ -8,17 +8,32 @@
 
 {% paginate collection.products by 24 %}
 
+{% comment %}
+
+{% for product in collection.products %}
+  {% if product.description contains "hidden image one" %}
+    {% assign imageOne = {{ product | img_url: 'large' }} %}
+  {% elsif product.description contains "hidden image two" %}
+    {% assign imageTwo = {{ product | img_url: 'large' }} %}
+  {% endif %}
+{% endfor %}
+
+{% endcomment %}
+
+
 {% if collection.description != blank %}
   <div class="rte rte--description">
     <h1>{{ collection.title }}</h1>
     <div class="rte text-center">
+      {% comment %}
       <div class="designer-homepage-box left">
-        <div class="designer-homepage-image one"></div>
+        <img src="{{ imageOne }}">
       </div>
       <div class="designer-homepage-box right">
-        <div class="designer-homepage-image two"></div>
+        <img src="{{ imageTwo }}">
       </div>
     </div>
+    {% endcomment %}
     {{ collection.description }}
   </div>
 {% endif %}
@@ -73,8 +88,10 @@
 
 <div class="grid collection-grid grid--uniform grid--no-gutters">
   {% for product in collection.products %}
-    {% assign price = product.price | money_without_trailing_zeros %}
-    {% include 'product-grid-item' %}
+    {% unless product.description contains "do not show" %}
+      {% assign price = product.price | money_without_trailing_zeros %}
+      {% include 'product-grid-item' %}
+    {% endunless %}
   {% else %}
     {% comment %}
       Add default products to help with onboarding for collections/all only.

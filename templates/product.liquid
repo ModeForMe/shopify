@@ -56,7 +56,7 @@
           {% endif %}
 
           <span id="ProductPrice" class="product-single__price{% if product.compare_at_price > product.price %} on-sale{% endif %}" itemprop="price">
-            {{ current_variant.price | money }}
+            Pre-sale price: {{ current_variant.price | money }}
           </span>
 
           <hr class="hr--small">
@@ -68,7 +68,7 @@
             <select name="id" id="ProductSelect" class="product-single__variants">
               {% for variant in product.variants %}
                 {% if variant.available %}
-
+                  <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
                 {% else %}
                   <option disabled="disabled">
                     {{ variant.title }} - {{ 'products.product.sold_out' | t }}
@@ -86,8 +86,10 @@
 
             <div class="product-single__description rte" itemprop="description">
               {{ product.description }}
-              <p><b>Campaign target: </b>{{ product.variants[0].sku }} items<br/>
-              <b>To goal: </b>{{ product.variants[0].inventory_quantity }} left</p>
+              <p>The campaign for this item lasts two weeks. Your item will go into production once the target is reached.</p>
+              <h4><b>Campaign target: </b>{{ product.variants[0].sku }}<br/>
+              <b>Items before goal: </b>{{ product.variants[0].inventory_quantity }}<br/>
+              <b>Time left: </b>11 days</h4>
             </div>
 
             {% if settings.social_sharing_products %}
@@ -96,26 +98,22 @@
 
             <div class="product-single__add-to-cart">
               <button type="submit" name="add" id="AddToCart" class="btn">
-                <span id="AddToCartText">{{ 'products.product.add_to_cart' | t }}</span>
+                <span id="AddToCartText">Pre-order This Design</span>
               </button>
             </div>
-
           </form>
 
         </div>
       </div>
     </div>
-
-    <div class="product__back-button grid__item text-center">
-      <a href="{% if collection %}{{ collection.url }}{% else %}/{% endif %}" class="btn return-link">
-        <span class="icon icon-arrow-left" aria-hidden="true"></span>
-        <span>{{ 'products.product.back' | t }}</span>
-      </a>
-    </div>
-
   </div>
 
-  <hr class="hr--clear">
+  {% if collection %}
+    <hr class="hr--clear">
+    <div class="text-center">
+      <a href="{{ collection.url }}" class="return-link">&larr; {{ 'products.general.collection_return' | t: collection: collection.title }}</a>
+    </div>
+  {% endif %}
 
 </div>
 
@@ -154,7 +152,7 @@
       }
     });
   };
-  //
+
   // jQuery(function($) {
   //   new Shopify.OptionSelectors('ProductSelect', {
   //     product: {{ product | json }},
