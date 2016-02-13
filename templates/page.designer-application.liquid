@@ -32,13 +32,38 @@
         </div>
 
         <div class="grid__item">
-          <label for="ContactFormPhone" class="label--hidden">{{ 'contact.form.phone' | t }}</label>
-          <input type="tel" id="ContactFormPhone" name="contact[phone]" placeholder="{{ 'contact.form.phone' | t }}" pattern="[0-9\-]*" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}" class="input-full">
+          <label for="ContactFormLocation" class="label--hidden">{{ 'contact.form.location' | t }}</label>
+          <input type="text" id="ContactFormLocation" name="contact[location]" placeholder="{{ 'contact.form.location' | t }}" value="{% if form.location %}{{ form.location }}{% elsif customer %}{{ customer.location }}{% endif %}" class="input-full">
         </div>
 
         <div class="grid__item">
           <label for="ContactFormMessage" class="label--hidden">{{ 'contact.form.message' | t }}</label>
           <textarea id="ContactFormMessage" name="contact[body]" placeholder="{{ 'contact.form.message' | t }}" class="input-full">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+        </div>
+
+        <div class="grid__item">
+          <label for="ContactFormSite" class="label--hidden">{{ 'contact.form.site' | t }}</label>
+          <input type="text" id="ContactFormSite" name="contact[site]" placeholder="{{ 'contact.form.site' | t }}"  value="{% if form.site %}{{ form.site }}{% elsif customer %}{{ customer.site }}{% endif %}" class="input-full">
+        </div>
+
+        <div class="grid__item">
+          <label for="ContactFormTwitter" class="label--hidden">{{ 'contact.form.twitter' | t }}</label>
+          <input type="text" id="ContactFormTwitter" name="contact[twitter]" placeholder="{{ 'contact.form.twitter' | t }}" value="{% if form.twitter %}{{ form.twitter }}{% elsif customer %}{{ customer.twitter }}{% endif %}" class="input-full">
+        </div>
+
+        <div class="grid__item">
+          <label for="ContactFormInstagram" class="label--hidden">{{ 'contact.form.instagram' | t }}</label>
+          <input type="text" id="ContactFormInstagram" name="contact[instagram]" placeholder="{{ 'contact.form.instagram' | t }}" value="{% if form.instagram %}{{ form.instagram }}{% elsif customer %}{{ customer.instagram }}{% endif %}" class="input-full">
+        </div>
+
+        <div class="grid__item">
+          <label for="ContactFormFacebook" class="label--hidden">{{ 'contact.form.facebook' | t }}</label>
+          <input type="text" id="ContactFormFacebook" name="contact[facebook]" placeholder="{{ 'contact.form.facebook' | t }}" value="{% if form.facebook %}{{ form.facebook }}{% elsif customer %}{{ customer.facebook }}{% endif %}" class="input-full">
+        </div>
+
+        <div class="grid__item">
+          <label for="ContactFormReferral" class="label--hidden">{{ 'contact.form.referral' | t }}</label>
+          <input type="text" id="ContactFormReferral" name="contact[referral]" placeholder="{{ 'contact.form.referral' | t }}" value="{% if form.referral %}{{ form.referral }}{% elsif customer %}{{ customer.referral }}{% endif %}" class="input-full">
         </div>
       </div>
 

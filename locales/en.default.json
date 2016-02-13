@@ -121,7 +121,13 @@
       "name": "Name",
       "email": "Email",
       "phone": "Phone Number",
-      "message": "Message",
+      "location": "Location",
+      "message": "A bit about you",
+      "site": "Your site (if you have one)",
+      "twitter": "Twitter",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "referral": "How did you hear about us?",
       "send": "Send",
       "post_success": "Thanks for contacting us. We'll get back to you as soon as possible."
     }
