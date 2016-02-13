@@ -8,7 +8,7 @@
           <p class="product-item__vendor">{{ product.vendor }}</p>
         {% endif %}
         <p class="product-item__title">{{ product.title }}</p>
-        <p class="product-item__price-wrapper">
+        <p class="product-item__price-wrapper"><b>Pre-sale price:&nbsp;</b>
           {% comment %}
             You can show a leading 'from' or 'up to' by checking 'product.price_varies'
             if your variants have different prices.
@@ -30,6 +30,17 @@
             {% endif %}
           {% endif %}
         </p>
+
+        {% if product.variants[0].inventory_quantity > 0 %}
+
+            <p class="progress">{{ product.variants[0].inventory_quantity | json }} left to target</p>
+
+        {% else %}
+
+            <p class="progress">Target Reached</p>
+            <p>Still available until Feb 12</p>
+
+        {% endif %}
 
         {% comment %}
           Check if the product is sold out.

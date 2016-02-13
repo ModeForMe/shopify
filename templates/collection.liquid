@@ -10,6 +10,7 @@
 
 {% if collection.description != blank %}
   <div class="rte rte--description">
+    <h1>{{ collection.title }}</h1>
     {{ collection.description }}
   </div>
 {% endif %}
@@ -64,8 +65,10 @@
 
 <div class="grid collection-grid grid--uniform grid--no-gutters">
   {% for product in collection.products %}
-    {% assign price = product.price | money_without_trailing_zeros %}
-    {% include 'product-grid-item' %}
+    {% unless product.description contains "do not show" %}
+      {% assign price = product.price | money_without_trailing_zeros %}
+      {% include 'product-grid-item' %}
+    {% endunless %}
   {% else %}
     {% comment %}
       Add default products to help with onboarding for collections/all only.
