@@ -86,10 +86,10 @@
 
             <div class="product-single__description rte" itemprop="description">
               {{ product.description }}
-              <p>The campaign for this item lasts two weeks. Your item will go into production once the target is reached.</p>
+              <p>The campaign for this item lasts three weeks. Your item will go into production once the target is reached.</p>
               <h4><b>Campaign target: </b>{{ product.variants[0].sku }}<br/>
               <b>Items before goal: </b>{{ product.variants[0].inventory_quantity }}<br/>
-              <b>Time left: </b>10 days</h4>
+              <b>Time left: </b>2 days</h4>
             </div>
 
             {% if settings.social_sharing_products %}
